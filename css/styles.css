@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 960px;
+    height: 960px;
+}
+
+.grid{
+    outline: 1px solid black;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+}
