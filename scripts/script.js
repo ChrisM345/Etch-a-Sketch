@@ -18,7 +18,7 @@ function createGrid(squares){
     }
     const gridSquares = document.querySelectorAll('.grid');
     gridSquares.forEach(item => {
-        item.addEventListener('click', (e) => {
+        item.addEventListener('mouseover', (e) => {
             console.log(e)
             console.log(item)
             item.style.backgroundColor = randomColor();
@@ -26,5 +26,20 @@ function createGrid(squares){
         })
     })
 }
+
+function promptNewGrid(){
+    //console.log("prompted")
+    var numberOfSquares = prompt("Please enter the number of squares per side for the new grid");
+    console.log(typeof(numberOfSquares));
+    if (!isNaN(numberOfSquares)){
+        parent = document.querySelector('.container')
+        while (parent.hasChildNodes()) {
+            parent.removeChild(parent.lastChild);
+        }
+        createGrid(numberOfSquares)
+    }
+}
+const newGridButton = document.querySelector('.create-grid');
+newGridButton.addEventListener('click', promptNewGrid);
 
 createGrid(16)
