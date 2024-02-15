@@ -3,6 +3,8 @@
     flex-wrap: wrap;
     width: 960px;
     height: 960px;
+    justify-content: center;
+    align-items: center;
 }
 
 .grid{
@@ -14,4 +16,12 @@
 .create-grid{
     padding: 10px 10px;
     margin: 10px 10px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
 }
