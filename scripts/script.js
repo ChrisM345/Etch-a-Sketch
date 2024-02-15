@@ -7,20 +7,25 @@ function randomColor() {
     return `rgb(${r}, ${g}, ${b})`
 }
 function createGrid(squares){
+    gridSize = 960 / squares;
+    gridSize = gridSize + 'px';
     for (let i = 0; i < squares; i++) {
         gridCol = document.createElement('div');
         container.appendChild(gridCol)
         for (let j = 0; j < squares; j++) {
             grid = document.createElement('div');
+            grid.style.width = gridSize;
+            grid.style.height = gridSize;
             grid.classList.add('grid');
             gridCol.appendChild(grid)
         }
     }
+    //grid.style.backgroundColor = 'pink';
     const gridSquares = document.querySelectorAll('.grid');
     gridSquares.forEach(item => {
         item.addEventListener('mouseover', (e) => {
-            console.log(e)
-            console.log(item)
+            //console.log(e)
+            //console.log(item)
             item.style.backgroundColor = randomColor();
             //item.style.outline = 'none';
         })
@@ -30,7 +35,7 @@ function createGrid(squares){
 function promptNewGrid(){
     //console.log("prompted")
     var numberOfSquares = prompt("Please enter the number of squares per side for the new grid");
-    console.log(typeof(numberOfSquares));
+    //console.log(typeof(numberOfSquares));
     if (!isNaN(numberOfSquares)){
         parent = document.querySelector('.container')
         while (parent.hasChildNodes()) {
